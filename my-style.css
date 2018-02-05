@@ -9,8 +9,10 @@ body
 	background: #eaeaea;
 	display: flex;
 	align-items: center;
+	justify-content: center;
 	flex-basis: 17%;
 	height: 200px;
+	margin-bottom: 1em;
 }
 
 .box-1 {
