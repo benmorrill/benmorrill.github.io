@@ -10,9 +10,10 @@ body
 
 .box {
 	background: #eaeaea;
+	display: flex;
 	align-items: center;
+	flex-basis: 17%;
 	height: 400px;
-	width: 700px;
 }
 
 .box-1 {
