@@ -11,7 +11,7 @@ body
 	align-items: center;
 	justify-content: center;
 	flex-basis: 17%;
-	height: 200px;
+	width: 500px;
 	margin-bottom: 1em;
 }
 
