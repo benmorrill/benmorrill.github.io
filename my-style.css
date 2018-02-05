@@ -1,7 +1,4 @@
 body 
-{
-	background-color: #81b0ef
-}
 
 {
 	font-family: "Helvetica"; 
@@ -13,7 +10,7 @@ body
 	display: flex;
 	align-items: center;
 	flex-basis: 17%;
-	height: 150px;
+	height: 130px;
 }
 
 .box-1 {
