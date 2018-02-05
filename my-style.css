@@ -13,7 +13,7 @@ body
 	display: flex;
 	align-items: center;
 	flex-basis: 17%;
-	height: 400px;
+	height: 200px;
 }
 
 .box-1 {
@@ -22,4 +22,12 @@ body
 
 .box-2 {
 	border: 4px dashed red;
+}
+
+.article {
+	padding: 1em;
+}
+
+.indent {
+	text-indent: 33.33%;
 }
