@@ -3,25 +3,43 @@
 <head>
 	<title>Javascript Intro</title>
 	<link rel="stylesheet" type="text/css" href="https://benmorrill.github.io/my-style.css">
+	<style type="text/css">
+		#square {
+			margin-top: 20px;
+			margin-left: 75px;
+			height: 200px;
+			width: 200px;
+			background: gray;
+		}
+
+		div {
+			margin-bottom: 20px;
+		}
+
+		.round {
+			border-radius: 20px;
+		}
+
+		#square:hover{
+			cursor: pointer;
+		}
+	</style>
 	<script type="text/javascript">
-		var buton=document.getElementById("buton");
-		var allchar="0123456789ABCDEF";
-
-		buton.addEventListener("click",myFun);
-
 		function myFun(){
   			var  randcol= "";
+  			var allchar="0123456789ABCDEF";
 			for(var i=0; i<6; i++){
    				randcol += allchar[Math.floor(Math.random()*16)];
 			}
 			document.body.style.backgroundColor= "#"+randcol;
 		}
-
 	</script>
 </head>
 <body>
 	<h5>Intro to Javascript</h5>
 	<!-- <div id="test" class="t_class">Make something appear</div> -->
-	<button onclick="javascript:myFun()">Change color</button>
+	<button onclick="javascript:myFun()">Change background color</button>
+
+
 </body>
 </html>
