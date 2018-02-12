@@ -2,28 +2,9 @@
 <html>
 <head>
 	<title>Javascript Intro</title>
+
 	<link rel="stylesheet" type="text/css" href="https://benmorrill.github.io/my-style.css">
-	<style type="text/css">
-		#square {
-			margin-top: 20px;
-			margin-left: 75px;
-			height: 200px;
-			width: 200px;
-			background: gray;
-		}
 
-		div {
-			margin-bottom: 20px;
-		}
-
-		.round {
-			border-radius: 20px;
-		}
-
-		#square:hover{
-			cursor: pointer;
-		}
-	</style>
 	<script type="text/javascript">
 		function myFun(){
   			var  randcol= "";
@@ -34,6 +15,39 @@
 			document.body.style.backgroundColor= "#"+randcol;
 		}
 	</script>
+	<script type="text/javascript">
+		function add_image_massage() {
+        	var src = "https://www.thermea.ca/uploads/sites/3/2017/05/massage-femme-dos.jpg";
+        	show_image("https://www.thermea.ca/uploads/sites/3/2017/05/massage-femme-dos.jpg", 400,200, "Massage");
+    	}
+
+    	function add_image_instructions() {
+        	var src = "https://lh4.googleusercontent.com/0ciKOxaW0Vl3fGCJULCBr3IMLxR5img9Hqvlyjf8tptiNPqXkDo305yMOzWHXrA7Rx2BbUuSIZCCeq9W3uO0=w958-h929";
+        	show_image("https://lh4.googleusercontent.com/0ciKOxaW0Vl3fGCJULCBr3IMLxR5img9Hqvlyjf8tptiNPqXkDo305yMOzWHXrA7Rx2BbUuSIZCCeq9W3uO0=w958-h929", 546,334, "Instructions");
+    	}
+    	function show_image(src, width, height, alt) {
+        	var img = document.createElement("img");
+        	img.src = src;
+        	img.width = width;
+        	img.height = height;
+        	img.alt = alt;
+        	document.body.appendChild(img);
+   		}
+	</script>
+
+
+
+	<script>
+	function explain() {
+   		document.getElementById("explain1").innerHTML = "You're probably wondering why that previous button did that...";
+	}
+	</script>
+
+	<script>
+	function explainTwo() {
+   		document.getElementById("explain2").innerHTML = "The instructions were a little unclear";
+	}
+	</script>
 </head>
 <body>
 	<h3>Intro to Javascript</h3>
@@ -42,13 +56,14 @@
 
 	<button onclick="javascript:myFun()">Change background color</button>
 
-	<div id="test" class="t_class">Hello by ID</div>
-	<script>
-		document.getElementById("test").innerHTML = "Hello by ID";
-	</script>
-	<div id="square" onclick="show_sentence()">So I think the instructions have a typo.</div>
+	<button onclick="javascript:add_image_massage()">Click me first!</button>
 
+	<div id="explain1"></div>
+	<button onclick="javascript:explain1()">Click me second!</button>
 
+	<div id="explain2"></div>
+	<button onclick="javascript:explain2()">Click me third!</button>
 
+	<button onclick="javascript:add_image_instructions()">Click me fourth!</button>
 </body>
 </html>
