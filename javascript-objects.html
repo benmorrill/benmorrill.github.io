@@ -36,6 +36,7 @@
 <body>
 	<h3>Javascript Object Practice</h3>
 
+	<h4>Song Table</h4>
 	<table id="songs">
 		<tr>
 			<td align="center">Song title</td>
@@ -62,6 +63,7 @@
 			<td>A$AP Ferg</td>
 		</tr>
 
+	<h4>New Song table</h4>
 	<table>
 		<thead>
 			<tr>
@@ -69,7 +71,27 @@
 				<th>Artist</th>
 			</tr>
 		</thead>
-		<tbody id="songs"></tbody>
+		<tbody id="newsongs">
+			var text = "";
+			var newtext = "";
+			for (var x in songs) {
+				if (songs.hasOwnProperty(x)) {
+					var obj = songs[x];
+					for (var y in obj) {
+						if (obj.hasOwnProperty(y)) {
+							text += "<tr><td align='right'>" + y + "</td><td>" + obj[y] + "</td></tr>";
+							/*document.write(y + " -> " + obj[y] + '\n');*/
+						}
+					}
+					newtext += "<tr><td>" + obj['First'] + " " + obj['Last'] + "</td><td>" + obj['User ID'] + "</td></tr>";
+
+				}
+			}
+			document.getElementById("songs").innerHTML = text;
+			document.getElementById("newsongs").innerHTML = newtext;
+			document.getElementByID("songs").innerHTML = text;
+		
+		</tbody>
 	</table>
 	<script>
 		
