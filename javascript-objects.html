@@ -11,57 +11,33 @@
 	<script>
 		var songs = [
 			{
-				"Song Title": "Fool"
+				"Song Title": "Fool",
 				"Artist":"Fitz and the Tantrums"
-			}
+			},
 			{
-				"Song Title": "Feel Me"
+				"Song Title": "Feel Me",
 				"Artist":"Tyga ft Kanye West"
-			}
+			},
 			{
-				"Song Title": "Lonely Boy"
+				"Song Title": "Lonely Boy",
 				"Artist":"The Black Keys"
-			}
+			},
 			{
-				"Song Title": "rockstar"
+				"Song Title": "rockstar",
 				"Artist":"Post Malone ft 21 Savage"
-			}
+			},
 			{
 				"Song Title": "Plain Jane"
 				"Artist":"A$AP Ferg"
 			}
-		]
+		];
 	</script>
 </head>
 <body>
 	<h3>Javascript Object Practice</h3>
 
 	<h4>Song Table</h4>
-	<table id="songs">
-		<tr>
-			<td align="center">Song title</td>
-			<td align="center">Artist</td>
-		</tr>
-		<tr>
-			<td>Fool</td>
-			<td>Fitz and the Tantrums</td>
-		</tr>
-		<tr>
-			<td>Feel Me</td>
-			<td>Tyga (ft Kanye West)</td>
-		</tr>
-		<tr>
-			<td>Lonely Boy</td>
-			<td>The Black Keys</td>
-		</tr>
-		<tr>
-			<td>rockstar</td>
-			<td>Post Malone (ft 21 Savage)</td>
-		</tr>
-		<tr>
-			<td>Plain Jane</td>
-			<td>A$AP Ferg</td>
-		</tr>
+	<table id="songs"></table><br><br>
 
 	<h4>New Song table</h4>
 	<table>
@@ -72,7 +48,11 @@
 			</tr>
 		</thead>
 		<tbody id="newsongs">
-			var text = "";
+			
+		</tbody>
+	</table>
+	<script>
+		var text = "";
 			var newtext = "";
 			for (var x in songs) {
 				if (songs.hasOwnProperty(x)) {
@@ -80,7 +60,6 @@
 					for (var y in obj) {
 						if (obj.hasOwnProperty(y)) {
 							text += "<tr><td align='right'>" + y + "</td><td>" + obj[y] + "</td></tr>";
-							/*document.write(y + " -> " + obj[y] + '\n');*/
 						}
 					}
 					newtext += "<tr><td>" + obj['Song Title'] + " " + obj['Last'] + "</td><td>" + obj['Artist'] + "</td></tr>";
@@ -89,10 +68,6 @@
 			}
 			document.getElementById("songs").innerHTML = text;
 			document.getElementById("newsongs").innerHTML = newtext;
-		
-		</tbody>
-	</table>
-	<script>
 		
 	</script>
 </body>
