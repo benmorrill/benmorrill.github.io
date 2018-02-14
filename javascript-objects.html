@@ -1,74 +1,62 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Javascript Objects</title>
-	<link rel="stylesheet" type="text/css" href="https://benmorrill.github.io/my-style.css">
-	<style>
-		table, td {
-			border: 1px solid black;
-		}
-	</style>
-	<script>
-		var songs = [
-			{
-				"Song Title": "Fool",
-				"Artist":"Fitz and the Tantrums"
-			},
-			{
-				"Song Title": "Feel Me",
-				"Artist":"Tyga ft Kanye West"
-			},
-			{
-				"Song Title": "Lonely Boy",
-				"Artist":"The Black Keys"
-			},
-			{
-				"Song Title": "rockstar",
-				"Artist":"Post Malone ft 21 Savage"
-			},
-			{
-				"Song Title": "Plain Jane"
-				"Artist":"A$AP Ferg"
-			}
-		];
-	</script>
-</head>
+		<title>Javascript tables</title>
+		<link rel="stylesheet" href="https://benmorrill.github.io/my-style.css">
+		<script>
+			var users = [
+				{
+					"Title": "Fool",
+					"Artist": "Fitz and the Tantrums",
+				},
+				{
+					"Title": "Feel Me",
+					"Artist": "Tyga ft Kanye West",
+				},
+				{
+					"Title": "Lonely Boy",
+					"Artist": "The Black Keys",
+				},
+				{
+					"Title": "rockstar",
+					"Artist": "Post Malone ft 21 Savage",
+				},
+				{
+					"Title": "Plain Jane",
+					"Artist": "A$AP Ferg",
+				}
+			];
+		</script>
+	</head>
 <body>
-	<h3>Javascript Object Practice</h3>
-
-	<h4>Song Table</h4>
-	<table id="music"></table><br><br>
-
-	<h4>New Song table</h4>
-	<table>
-		<thead>
-			<tr>
-				<th>Song Title</th>
-				<th>Artist</th>
-			</tr>
-		</thead>
-		<tbody id="newmusic">
-			
-		</tbody>
-	</table>
-	<script>
-		var text = "";
-		var newtext = "";
-			for (var x in songs) {
-				if (songs.hasOwnProperty(x)) {
-					var obj = songs[x];
+	<h1>Javascript Tables</h1>
+		<h2>Song Table</h2>
+		<table id="music" border="1"></table><br><br>
+		<h2>New Song Table</h2>
+		<table border="1">
+			<thead>
+				<tr><th>Song Title</th><th>Artist</th></tr>
+			</thead>
+			<tbody id="newmusic">
+				
+			</tbody>
+		</table>
+		<script>
+			var text = "";
+			var newtext = "";
+			for (var x in users) {
+				if (users.hasOwnProperty(x)) {
+					var obj = users[x];
 					for (var y in obj) {
 						if (obj.hasOwnProperty(y)) {
-							text += "<tr><td align='right'>" + y + "</td><td>" + obj[y] + "</td></tr>";
+							text += "<tr><td align='center'>" + y + "</td><td align='center'>" + obj[y] + "</td></tr>";
 						}
 					}
-					newtext += "<tr><td>" + obj['Song Title'] + " " + "</td><td>" + obj['Artist'] + "</td></tr>";
-
+					newtext += "<tr><td>" + obj['Title'] + " " + obj['Artist'] + "</td></tr>";
 				}
 			}
 			document.getElementById("music").innerHTML = text;
 			document.getElementById("newmusic").innerHTML = newtext;
-		
-	</script>
-</body>
+		</script>
+	</body>
 </html>
