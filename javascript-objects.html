@@ -8,22 +8,27 @@
 				{
 					"Title": "Fool",
 					"Artist": "Fitz and the Tantrums",
+					"Length":"3:11",
 				},
 				{
 					"Title": "Feel Me",
-					"Artist": "Tyga ft Kanye West",
+					"Artist": "Tyga",
+					"Length":"3:19",
 				},
 				{
 					"Title": "Lonely Boy",
 					"Artist": "The Black Keys",
+					"Length":"3:14",
 				},
 				{
 					"Title": "rockstar",
-					"Artist": "Post Malone ft 21 Savage",
+					"Artist": "Post Malone",
+					"Length":"3:38",
 				},
 				{
 					"Title": "Plain Jane",
 					"Artist": "A$AP Ferg",
+					"Length":"2:54",
 				}
 			];
 		</script>
@@ -35,7 +40,7 @@
 		<h2>New Song Table</h2>
 		<table border="1">
 			<thead>
-				<tr><th>Song Title</th><th>Artist</th></tr>
+				<tr><th>Song Title</th><th>Artist</th><th>Length</th></tr>
 			</thead>
 			<tbody id="newmusic">
 				
@@ -52,11 +57,111 @@
 							text += "<tr><td align='right'>" + y + "</td><td align='left'>" + obj[y] + "</td></tr>";
 						}
 					}
-					newtext += "<tr><td align='center'>" + obj['Title'] + "</td><td align='center'>" + obj['Artist'] + "</td></tr>";
+					newtext += "<tr><td align='center'>" + obj['Title'] + "</td><td align='center'>" + obj['Artist'] + "</td><td align='center'>" + obj['Length']+ "</td></tr>";
 				}
 			}
 			document.getElementById("music").innerHTML = text;
 			document.getElementById("newmusic").innerHTML = newtext;
 		</script>
+		<br>
+		<h3>Statistics Table</h3>
+		<table border="1">
+			<thead>
+				<tr><th>Number of Songs</th><th>Number of Artists</th><th>Length of Playlist</th></tr>
+			</thead>
+			<tbody id="stats">
+				
+			</tbody>
+		</table>
+		<script>
+			function numSong() {
+				var n = 0;
+				for (var i =0; i<users.length; i++) {
+					n++;
+				}
+				return n;
+			}
+			function numArtist() {
+				var n = 0;
+				for (var i =0; i<users.length; i++) {
+					n++;
+				} 
+				return n;
+			}
+			function lengPlay() {
+				var newt = "";
+				var spl = [];
+				var fix = [];
+				var minArr = [];
+				var secArr = [];
+				var sos = [];
+				var mins = 0;
+				var secs = 0;
+				var totSec = 0;
+				var mF = 0;
+				var sF = 0;
+				for (var x in users) {
+					if (users.hasOwnProperty(x)) {
+						var obj = users[x];
+						newt += obj['Length'] + ":";
+					}
+				}
+				spl = newt.split(":");
+				fix = str2Int(spl);
+				minArr = minArray(fix);
+				secArr = secArray(fix);
+				sos = str2Int(secArr);
+
+				mins = addNum(minArr);
+				secs = addNum(sos);
+
+				totSec = (mins*60) + secs;
+				mF = Math.floor(totSec/60);
+				sF = totSec%60;
+
+				//return totSec; 
+				return mF + ":"+ sF;
+			}
+			function addNum(a) {
+				var nums = a;
+				var sum = 0;
+
+				for(var i=0; i < nums.length; i++){
+					sum += parseInt(nums[i]);
+				}
+				return sum;
+			}
+			function str2Int(wasd) {
+				for (var i =0; i < wasd.length; i++) {
+					wasd[i] = +wasd[i];
+				}
+				return wasd;
+			}
+			function minArray(dasw) {
+				var mArr = [];
+				var mArrSplit =[];
+				for (var i =0; i < dasw.length; i=i+2) {
+					mArr += dasw[i];
+				}
+				mArrSplit = mArr.split("");
+				return mArrSplit;
+			}
+			function secArray(asd) {
+				var sArr = [];
+				var sArrSplit =[];
+				var sos = [];
+				for (var i =0; i < asd.length-1; i=i+2) {
+					sArr += asd[i+1] + " ";
+				}
+				sArrSplit = sArr.split(" ");
+				
+				return sArrSplit;
+			}
+			var words = "";
+			words += "<tr><td align='center'>" + numSong() + "</td><td align='center'>" + numArtist() + "</td><td align='center'>" + lengPlay() + "</td></tr>";
+			
+			document.getElementById("stats").innerHTML = words;
+		</script>
+		
 	</body>
 </html>
