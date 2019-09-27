@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Javascript Intro</title>
+
+	<link rel="stylesheet" type="text/css" href="https://benmorrill.github.io/my-style.css">
+
+	<script type="text/javascript">
+		function myFun(){
+  			var  randcol= "";
+  			var allchar="0123456789ABCDEF";
+			for(var i=0; i<6; i++){
+   				randcol += allchar[Math.floor(Math.random()*16)];
+			}
+			document.body.style.backgroundColor= "#"+randcol;
+		}
+	</script>
+	<script type="text/javascript">
+		function add_image_massage() {
+        	var src = "https://www.thermea.ca/uploads/sites/3/2017/05/massage-femme-dos.jpg";
+        	show_image("https://www.thermea.ca/uploads/sites/3/2017/05/massage-femme-dos.jpg", 400,200, "Massage");
+    	}
+
+    	function add_image_instructions() {
+        	var src = "https://i.imgur.com/22Z8dTi.png";
+        	show_image("https://i.imgur.com/22Z8dTi.png", 546,334, "Instructions");
+    	}
+    	function show_image(src, width, height, alt) {
+        	var img = document.createElement("img");
+        	img.src = src;
+        	img.width = width;
+        	img.height = height;
+        	img.alt = alt;
+        	document.body.appendChild(img);
+   		}
+	</script>
+
+
+
+	<script>
+	function explain() {
+   		document.getElementById("explain1").innerHTML = "You're probably wondering why that previous button did that...";
+	}
+	</script>
+
+	<script>
+	function explainTwo() {
+   		document.getElementById("explain2").innerHTML = "The instructions were a little unclear";
+	}
+	</script>
+</head>
+<body>
+	<h3>Intro to Javascript</h3>
+
+	<input type="button" onclick="location.href='https://benmorrill.github.io';" value="Back to home">
+
+	<button onclick="javascript:myFun()">Change background color</button>
+
+	<button onclick="javascript:add_image_massage()">Click me first!</button>
+
+	<button onclick="javascript:explain()">Click me second!</button>
+	<div id="explain1"></div>
+	
+	<button onclick="javascript:explainTwo()">Click me third!</button>
+	<div id="explain2"></div>
+	
+	<button onclick="javascript:add_image_instructions()">Click me fourth!</button>
+</body>
+</html>
